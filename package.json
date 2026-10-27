@@ -1,0 +1,16 @@
+{
+    "name": "com.dories.logging",
+    "displayName": "Dories Logging",
+    "version": "1.0.0",
+    "unity": "2022.3",
+    "description": "Dories 各模块共用的日志入口。通过替换 Log.Sink 接入自定义日志实现。",
+    "author": {
+        "name": "Dories"
+    },
+    "keywords": [
+        "log",
+        "logging"
+    ],
+    "license": "MIT",
+    "dependencies": {}
+}
