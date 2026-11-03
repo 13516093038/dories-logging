@@ -21,7 +21,10 @@ namespace Dories.Logging
             set => _sink = value ?? new UnityLogSink();
         }
 
-        [HideInCallstack, Conditional("UNITY_EDITOR"), Conditional("DEVELOPMENT_BUILD"), Conditional("DORIES_LOG")]
+        [HideInCallstack]
+        [Conditional("UNITY_EDITOR")]
+        [Conditional("DEVELOPMENT_BUILD")]
+        [Conditional("DORIES_LOG")]
         public static void Debug(string tag, string message, UnityEngine.Object context = null)
             => _sink.Log(LogLevel.Debug, tag, message, context);
 
@@ -36,7 +39,7 @@ namespace Dories.Logging
         [HideInCallstack]
         public static void Error(string tag, string message, UnityEngine.Object context = null)
             => _sink.Log(LogLevel.Error, tag, message, context);
-
+ 
         [HideInCallstack]
         public static void Exception(string tag, Exception exception, UnityEngine.Object context = null)
             => _sink.LogException(tag, exception, context);
